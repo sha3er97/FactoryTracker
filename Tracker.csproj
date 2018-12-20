@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1606A9AF-469A-4BFB-A3A6-08C2D4CFCE1B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Tracker</RootNamespace>
+    <AssemblyName>Tracker</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddNewAdminstrators.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewAdminstrators.Designer.cs">
+      <DependentUpon>AddNewAdminstrators.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewCompany.Designer.cs">
+      <DependentUpon>AddNewCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewDepartement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewDepartement.Designer.cs">
+      <DependentUpon>AddNewDepartement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewGauge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewGauge.Designer.cs">
+      <DependentUpon>AddNewGauge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewMachine.Designer.cs">
+      <DependentUpon>AddNewMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewOperator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewOperator.Designer.cs">
+      <DependentUpon>AddNewOperator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewProplem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewProplem.Designer.cs">
+      <DependentUpon>AddNewProplem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewStop_Go.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewStop_Go.Designer.cs">
+      <DependentUpon>AddNewStop_Go.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstrators.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adminstrators.Designer.cs">
+      <DependentUpon>Adminstrators.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_main.Designer.cs">
+      <DependentUpon>admin_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="companies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="companies.Designer.cs">
+      <DependentUpon>companies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="compose message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="compose message.Designer.cs">
+      <DependentUpon>compose message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller.cs" />
+    <Compile Include="DBManager.cs" />
+    <Compile Include="Departements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Departements.Designer.cs">
+      <DependentUpon>Departements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Final_tracker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Final_tracker.Designer.cs">
+      <DependentUpon>Final_tracker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Machines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Machines.Designer.cs">
+      <DependentUpon>Machines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manager_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manager_main.Designer.cs">
+      <DependentUpon>manager_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="notes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="notes.Designer.cs">
+      <DependentUpon>notes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operators.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operators.Designer.cs">
+      <DependentUpon>Operators.cs</DependentUpon>
+    </Compile>
+    <Compile Include="operator_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="operator_main.Designer.cs">
+      <DependentUpon>operator_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="profile.Designer.cs">
+      <DependentUpon>profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proplems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proplems.Designer.cs">
+      <DependentUpon>Proplems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Safety_gauges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Safety_gauges.Designer.cs">
+      <DependentUpon>Safety_gauges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stop and Go.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stop and Go.Designer.cs">
+      <DependentUpon>Stop and Go.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateGaugeReading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateGaugeReading.Designer.cs">
+      <DependentUpon>UpdateGaugeReading.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddNewAdminstrators.resx">
+      <DependentUpon>AddNewAdminstrators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewCompany.resx">
+      <DependentUpon>AddNewCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewDepartement.resx">
+      <DependentUpon>AddNewDepartement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewGauge.resx">
+      <DependentUpon>AddNewGauge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewMachine.resx">
+      <DependentUpon>AddNewMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewOperator.resx">
+      <DependentUpon>AddNewOperator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewProplem.resx">
+      <DependentUpon>AddNewProplem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewStop_Go.resx">
+      <DependentUpon>AddNewStop_Go.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstrators.resx">
+      <DependentUpon>Adminstrators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin_main.resx">
+      <DependentUpon>admin_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="companies.resx">
+      <DependentUpon>companies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="compose message.resx">
+      <DependentUpon>compose message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Departements.resx">
+      <DependentUpon>Departements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Final_tracker.resx">
+      <DependentUpon>Final_tracker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Machines.resx">
+      <DependentUpon>Machines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manager_main.resx">
+      <DependentUpon>manager_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="notes.resx">
+      <DependentUpon>notes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operators.resx">
+      <DependentUpon>Operators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="operator_main.resx">
+      <DependentUpon>operator_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profile.resx">
+      <DependentUpon>profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Proplems.resx">
+      <DependentUpon>Proplems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Safety_gauges.resx">
+      <DependentUpon>Safety_gauges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stop and Go.resx">
+      <DependentUpon>Stop and Go.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateGaugeReading.resx">
+      <DependentUpon>UpdateGaugeReading.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
