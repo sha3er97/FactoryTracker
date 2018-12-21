@@ -43,6 +43,7 @@
             this.viewRecieved_btn.TabIndex = 3;
             this.viewRecieved_btn.Text = "view recieved";
             this.viewRecieved_btn.UseVisualStyleBackColor = true;
+            this.viewRecieved_btn.Click += new System.EventHandler(this.viewRecieved_btn_Click);
             // 
             // viewSent_btn
             // 
@@ -52,6 +53,7 @@
             this.viewSent_btn.TabIndex = 2;
             this.viewSent_btn.Text = "view sent";
             this.viewSent_btn.UseVisualStyleBackColor = true;
+            this.viewSent_btn.Click += new System.EventHandler(this.viewSent_btn_Click);
             // 
             // dataGridView1
             // 
@@ -72,6 +74,7 @@
             this.compose_btn.TabIndex = 5;
             this.compose_btn.Text = "compose new message";
             this.compose_btn.UseVisualStyleBackColor = true;
+            this.compose_btn.Click += new System.EventHandler(this.compose_btn_Click);
             // 
             // notes
             // 

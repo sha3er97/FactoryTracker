@@ -48,6 +48,7 @@
             this.delete_btn.TabIndex = 43;
             this.delete_btn.Text = "delete";
             this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
             // search_btn
             // 
@@ -58,6 +59,7 @@
             this.search_btn.TabIndex = 42;
             this.search_btn.Text = "Search";
             this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
             // dataGridView1
             // 
@@ -78,6 +80,7 @@
             this.addOP_btn.TabIndex = 40;
             this.addOP_btn.Text = "add new operator";
             this.addOP_btn.UseVisualStyleBackColor = true;
+            this.addOP_btn.Click += new System.EventHandler(this.addOP_btn_Click);
             // 
             // departement_cmbBox
             // 

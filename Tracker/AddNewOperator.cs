@@ -49,7 +49,7 @@ namespace Tracker
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            /*
+            
             int o;
             if (dt != null)
             {
@@ -74,7 +74,7 @@ namespace Tracker
                     MessageBox.Show("error in adding a new admin");
                 }
             }
-            */
+            
         }
     }
 }

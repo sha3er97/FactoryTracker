@@ -75,16 +75,16 @@ namespace Tracker
             f.Show();
         }
 
-        private void notes_btn_Click(object sender, EventArgs e)
-        {
-
-            notes f = new notes(_privilege, _ID);
-            f.Show();
-        }
         private void proplems_btn_Click(object sender, EventArgs e)
         {
 
             Proplems f = new Proplems(_privilege, _ID);
+            f.Show();
+        }
+
+        private void notes_btn_Click_1(object sender, EventArgs e)
+        {
+            notes f = new notes(_privilege, _ID);
             f.Show();
         }
     }

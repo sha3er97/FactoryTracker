@@ -12,9 +12,18 @@ namespace Tracker
 {
     public partial class Departements : Form
     {
+        private Controller controllerObj;
         public Departements()
         {
             InitializeComponent();
+            controllerObj = new Controller();
+            DataTable dt = controllerObj.GetDeparments();
+            departement_cmbBox.DataSource = dt;
+            departement_cmbBox.DisplayMember = "name";
+            departement_cmbBox.ValueMember = "id";
+            DataTable dt1 = controllerObj.getdepdetails((int)departement_cmbBox.SelectedValue);
+            dataGridView1.DataSource = dt;
+            dataGridView1.Refresh();
         }
 
         private void addDept_btn_Click(object sender, EventArgs e)

@@ -49,6 +49,7 @@
             this.notes_btn.TabIndex = 17;
             this.notes_btn.Text = "notes";
             this.notes_btn.UseVisualStyleBackColor = true;
+            this.notes_btn.Click += new System.EventHandler(this.notes_btn_Click_1);
             // 
             // stop_btn
             // 

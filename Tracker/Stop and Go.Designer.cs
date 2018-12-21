@@ -65,6 +65,7 @@
             this.viewRecieved_btn.TabIndex = 7;
             this.viewRecieved_btn.Text = "view recieved";
             this.viewRecieved_btn.UseVisualStyleBackColor = true;
+            this.viewRecieved_btn.Click += new System.EventHandler(this.viewRecieved_btn_Click_1);
             // 
             // viewSent_btn
             // 
@@ -74,6 +75,7 @@
             this.viewSent_btn.TabIndex = 6;
             this.viewSent_btn.Text = "view sent";
             this.viewSent_btn.UseVisualStyleBackColor = true;
+            this.viewSent_btn.Click += new System.EventHandler(this.viewSent_btn_Click_1);
             // 
             // radioButton2
             // 
