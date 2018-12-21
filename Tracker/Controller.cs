@@ -106,6 +106,43 @@ namespace Tracker
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable GetDeparments()
+        {
+            String Query = "Select id,name from Sub_Department";
+            return dbMan.ExecuteReader(Query);
+        }
+
+        public int NewAdministrator(string name, String user, String email)
+        {
+            String Query = "insert into Administrator (name,username,e_mail) values('" + name + "' ,'" + user + "' , '" + email + "' ;";
+            return dbMan.ExecuteNonQuery(Query);
+        }
+
+        //Add Operator
+        public int NewOperator(string name, String user, String email, string dep, int ch)
+        {
+            string Query;
+            if (ch == 1)
+                Query = "insert into Operator (name,username,e_mail) values('" + name + "' ,'" + user + "' , '" + email + "' , '" + dep + "' , 1 ) ;";
+            else
+                Query = "insert into Operator (name,username,e_mail) values('" + name + "' ,'" + user + "' , '" + email + "' , " + dep + ") ;";
+            return dbMan.ExecuteNonQuery(Query);
+        }
+
+        public DataTable SelectUtilitiesMachinesInDepartment(int id)
+        {
+            string query = "select name from Utilities_Machines where included_in = " + id;
+            return dbMan.ExecuteReader(query);
+
+        }
+
+        public DataTable SelectProductionMachinesInDepartment(int id)
+        {
+            string query = "select name from Production_Machines where included_in = " + id;
+            return dbMan.ExecuteReader(query);
+
+        }
+
         public string getNameOperatorByID(int id)
         {
             string query = "select name from Operator where id=" + id;
@@ -151,6 +188,22 @@ namespace Tracker
             dbMan.ExecuteNonQuery(query);
             query = "update Administrator set e_mail= " + email + " where id=" + id;
             return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int updatedepadmin(int manid, string name)
+        {
+            string query = "update Sub_Department set manager_id= " + manid + " where name= '" + name + "' ";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
+
+
+        public int Getmaxidofadmin()
+        //id of admin
+        {
+            String Query = "select MAX(id) from Administrator ;";
+            return (int)dbMan.ExecuteScalar(Query);
         }
 
         public void TerminateConnection()
