@@ -12,9 +12,9 @@ namespace Tracker
 {
     public enum Privileges
     {
-        Manager =0,
+        Manager =2,
         Admin = 1,
-        Operators = 2
+        Operators = 0
     }
 
     public partial class Login : Form
