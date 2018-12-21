@@ -16,5 +16,11 @@ namespace Tracker
         {
             InitializeComponent();
         }
+
+        private void addDept_btn_Click(object sender, EventArgs e)
+        {
+            AddNewDepartement f = new AddNewDepartement();
+            f.Show();
+        }
     }
 }

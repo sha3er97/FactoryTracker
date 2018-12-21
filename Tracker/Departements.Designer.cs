@@ -61,6 +61,7 @@
             this.addDept_btn.TabIndex = 14;
             this.addDept_btn.Text = "add new departement";
             this.addDept_btn.UseVisualStyleBackColor = true;
+            this.addDept_btn.Click += new System.EventHandler(this.addDept_btn_Click);
             // 
             // dataGridView1
             // 

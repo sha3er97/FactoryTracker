@@ -94,6 +94,7 @@
             this.machines_btn.TabIndex = 12;
             this.machines_btn.Text = "machines";
             this.machines_btn.UseVisualStyleBackColor = true;
+            this.machines_btn.Click += new System.EventHandler(this.machines_btn_Click_1);
             // 
             // departements_btn
             // 
@@ -103,6 +104,7 @@
             this.departements_btn.TabIndex = 11;
             this.departements_btn.Text = "departements";
             this.departements_btn.UseVisualStyleBackColor = true;
+            this.departements_btn.Click += new System.EventHandler(this.departements_btn_Click);
             // 
             // final_tracker_btn
             // 
@@ -130,6 +132,7 @@
             this.admins_btn.TabIndex = 18;
             this.admins_btn.Text = "adminstrators";
             this.admins_btn.UseVisualStyleBackColor = true;
+            this.admins_btn.Click += new System.EventHandler(this.admins_btn_Click);
             // 
             // operators_btn
             // 
@@ -139,6 +142,7 @@
             this.operators_btn.TabIndex = 19;
             this.operators_btn.Text = "operators";
             this.operators_btn.UseVisualStyleBackColor = true;
+            this.operators_btn.Click += new System.EventHandler(this.operators_btn_Click_1);
             // 
             // manager_main
             // 

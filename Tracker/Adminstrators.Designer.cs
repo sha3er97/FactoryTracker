@@ -56,6 +56,7 @@
             this.addAdmin_btn.TabIndex = 18;
             this.addAdmin_btn.Text = "add new adminstrator";
             this.addAdmin_btn.UseVisualStyleBackColor = true;
+            this.addAdmin_btn.Click += new System.EventHandler(this.addAdmin_btn_Click);
             // 
             // departement_cmbBox
             // 

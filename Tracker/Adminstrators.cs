@@ -16,5 +16,11 @@ namespace Tracker
         {
             InitializeComponent();
         }
+
+        private void addAdmin_btn_Click(object sender, EventArgs e)
+        {
+            AddNewAdminstrators f = new AddNewAdminstrators();
+            f.Show();
+        }
     }
 }

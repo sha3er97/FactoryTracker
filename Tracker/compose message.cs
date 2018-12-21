@@ -12,9 +12,24 @@ namespace Tracker
 {
     public partial class compose_message : Form
     {
-        public compose_message()
+        private Privileges _privilege;
+        private int _ID;
+        public compose_message(Privileges privilege, int ID)
         {
             InitializeComponent();
+            _privilege = privilege;
+            _ID = ID;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                departement_cmbBox.Enabled = false;
+                TO_cmbBox.Enabled = false;
+            }
         }
     }
 }

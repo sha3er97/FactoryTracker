@@ -82,7 +82,7 @@
             // departement_cmbBox
             // 
             this.departement_cmbBox.FormattingEnabled = true;
-            this.departement_cmbBox.Location = new System.Drawing.Point(140, 45);
+            this.departement_cmbBox.Location = new System.Drawing.Point(140, 13);
             this.departement_cmbBox.Name = "departement_cmbBox";
             this.departement_cmbBox.Size = new System.Drawing.Size(203, 21);
             this.departement_cmbBox.TabIndex = 39;
@@ -100,7 +100,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(140, 13);
+            this.comboBox1.Location = new System.Drawing.Point(140, 45);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(203, 21);
             this.comboBox1.TabIndex = 45;

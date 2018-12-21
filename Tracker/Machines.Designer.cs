@@ -85,6 +85,7 @@
             this.addMachine_btn.TabIndex = 31;
             this.addMachine_btn.Text = "add new machine";
             this.addMachine_btn.UseVisualStyleBackColor = true;
+            this.addMachine_btn.Click += new System.EventHandler(this.addMachine_btn_Click);
             // 
             // dataGridView1
             // 

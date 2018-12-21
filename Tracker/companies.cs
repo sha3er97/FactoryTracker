@@ -13,6 +13,7 @@ namespace Tracker
     public partial class companies : Form
     {
         private Privileges _privilege;
+        private int _ID;
         public companies(Privileges privilege,int ID)
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace Tracker
             delete_btn.Enabled = false;
             departement_cmbBox.Enabled = false;
             _privilege = privilege;
+            _ID = ID;
             if (privilege == Privileges.Manager || privilege == Privileges.Admin)
             {
                 delete_btn.Enabled = true;
@@ -30,8 +32,12 @@ namespace Tracker
                 departement_cmbBox.Enabled = true;
 
             }
+        }
 
-
+        private void addCompany_btn_Click(object sender, EventArgs e)
+        {
+            companies f = new companies(_privilege, _ID);
+            f.Show();
         }
     }
 }

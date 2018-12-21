@@ -18,9 +18,11 @@ namespace Tracker
             InitializeComponent();
             _privilege = privilege;
             addOP_btn.Enabled = false;
+            departement_cmbBox.Enabled = false;
             if (privilege == Privileges.Manager)
             {
                 addOP_btn.Enabled = true;
+                departement_cmbBox.Enabled = true;
             }
         }
     }

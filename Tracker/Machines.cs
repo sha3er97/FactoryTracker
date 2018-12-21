@@ -32,5 +32,11 @@ namespace Tracker
 
             }
         }
+
+        private void addMachine_btn_Click(object sender, EventArgs e)
+        {
+            AddNewMachine f = new AddNewMachine();
+            f.Show();
+        }
     }
 }

@@ -49,7 +49,7 @@ namespace Tracker
                 else if (privlg == 2)
                 {
                     id = controllerObj.getIDAdminstrator(TxtBx_username.Text, TxtBx_pass.Text);
-                    manager_main func = new manager_main();
+                    manager_main func = new manager_main((Privileges)privlg, id);
                     func.Show(this);
                 }
             }

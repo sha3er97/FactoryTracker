@@ -33,7 +33,7 @@
             this.departement_cmbBox = new System.Windows.Forms.ComboBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.TO_cmbBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.messageBox = new System.Windows.Forms.TextBox();
             this.send_btn = new System.Windows.Forms.Button();
@@ -49,6 +49,7 @@
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "To Manager";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label1
             // 
@@ -90,13 +91,13 @@
             this.radioButton2.Text = "adminstrator";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // TO_cmbBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(71, 157);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(207, 21);
-            this.comboBox2.TabIndex = 6;
+            this.TO_cmbBox.FormattingEnabled = true;
+            this.TO_cmbBox.Location = new System.Drawing.Point(71, 157);
+            this.TO_cmbBox.Name = "TO_cmbBox";
+            this.TO_cmbBox.Size = new System.Drawing.Size(207, 21);
+            this.TO_cmbBox.TabIndex = 6;
             // 
             // label2
             // 
@@ -134,7 +135,7 @@
             this.ClientSize = new System.Drawing.Size(290, 342);
             this.Controls.Add(this.send_btn);
             this.Controls.Add(this.messageBox);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.TO_cmbBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -155,7 +156,7 @@
         private System.Windows.Forms.ComboBox departement_cmbBox;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox TO_cmbBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox messageBox;
         private System.Windows.Forms.Button send_btn;

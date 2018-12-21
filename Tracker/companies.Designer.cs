@@ -60,6 +60,7 @@
             this.addCompany_btn.TabIndex = 14;
             this.addCompany_btn.Text = "add new company";
             this.addCompany_btn.UseVisualStyleBackColor = true;
+            this.addCompany_btn.Click += new System.EventHandler(this.addCompany_btn_Click);
             // 
             // search_btn
             // 
