@@ -19,9 +19,7 @@ namespace Tracker
 
     public partial class Login : Form
     {
-        private bool _loggedin = false;
-        private Controller controllerObj; // A Reference of type Controller 
-                                          // (Initially NULL; NO Controller Object is created yet)
+        private Controller controllerObj; 
 
         public Login()
         {
@@ -35,22 +33,23 @@ namespace Tracker
             int id = 0;
             if (privlg >= 0) // Successful Login
             {
-                _loggedin = true;
-
                 // Create an Object of "Provided_Functionalities" Form and Show it
                 if (privlg == 0)
                 {
+                    id = controllerObj.getIDOperator(TxtBx_username.Text, TxtBx_pass.Text);
                     operator_main func; func = new operator_main((Privileges)privlg, id);
-                    func.Show(this);
-                }
-                else if (privlg == 2)
-                {
-                    manager_main func = new manager_main();
                     func.Show(this);
                 }
                 else if (privlg == 1)
                 {
+                    id = controllerObj.getIDAdminstrator(TxtBx_username.Text, TxtBx_pass.Text);
                     admin_main func = new admin_main((Privileges)privlg, id);
+                    func.Show(this);
+                }
+                else if (privlg == 2)
+                {
+                    id = controllerObj.getIDAdminstrator(TxtBx_username.Text, TxtBx_pass.Text);
+                    manager_main func = new manager_main();
                     func.Show(this);
                 }
             }
