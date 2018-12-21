@@ -1,4 +1,5 @@
 */bin/*
 */obj/*
-*.config
-DBManager.cs
+*/*.config
+*/DBManager.cs
+.vs
