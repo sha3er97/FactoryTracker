@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.addProplem_btn = new System.Windows.Forms.Button();
-            this.delete_btn = new System.Windows.Forms.Button();
             this.search_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -115,20 +114,10 @@
             this.addProplem_btn.Text = "add new proplem";
             this.addProplem_btn.UseVisualStyleBackColor = true;
             // 
-            // delete_btn
-            // 
-            this.delete_btn.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.delete_btn.Location = new System.Drawing.Point(175, 124);
-            this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(139, 27);
-            this.delete_btn.TabIndex = 26;
-            this.delete_btn.Text = "delete";
-            this.delete_btn.UseVisualStyleBackColor = true;
-            // 
             // search_btn
             // 
             this.search_btn.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.search_btn.Location = new System.Drawing.Point(13, 124);
+            this.search_btn.Location = new System.Drawing.Point(91, 130);
             this.search_btn.Name = "search_btn";
             this.search_btn.Size = new System.Drawing.Size(139, 27);
             this.search_btn.TabIndex = 25;
@@ -140,7 +129,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(332, 359);
-            this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.search_btn);
             this.Controls.Add(this.addProplem_btn);
             this.Controls.Add(this.dataGridView1);
@@ -168,7 +156,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button addProplem_btn;
-        private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.Button search_btn;
     }
 }
