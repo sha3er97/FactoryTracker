@@ -58,6 +58,7 @@
             this.stop_btn.TabIndex = 16;
             this.stop_btn.Text = "stop & go cards";
             this.stop_btn.UseVisualStyleBackColor = true;
+            this.stop_btn.Click += new System.EventHandler(this.stop_btn_Click);
             // 
             // proplems_btn
             // 
@@ -67,6 +68,7 @@
             this.proplems_btn.TabIndex = 15;
             this.proplems_btn.Text = "documented proplems";
             this.proplems_btn.UseVisualStyleBackColor = true;
+            this.proplems_btn.Click += new System.EventHandler(this.proplems_btn_Click);
             // 
             // companies_btn
             // 
@@ -76,6 +78,7 @@
             this.companies_btn.TabIndex = 14;
             this.companies_btn.Text = "maintainance companies";
             this.companies_btn.UseVisualStyleBackColor = true;
+            this.companies_btn.Click += new System.EventHandler(this.companies_btn_Click);
             // 
             // safety_gauges_btn
             // 
@@ -85,6 +88,7 @@
             this.safety_gauges_btn.TabIndex = 13;
             this.safety_gauges_btn.Text = "safety gauges";
             this.safety_gauges_btn.UseVisualStyleBackColor = true;
+            this.safety_gauges_btn.Click += new System.EventHandler(this.safety_gauges_btn_Click_1);
             // 
             // machines_btn
             // 
@@ -114,6 +118,7 @@
             this.final_tracker_btn.TabIndex = 10;
             this.final_tracker_btn.Text = "final tracker";
             this.final_tracker_btn.UseVisualStyleBackColor = true;
+            this.final_tracker_btn.Click += new System.EventHandler(this.final_tracker_btn_Click_1);
             // 
             // profile_btn
             // 
@@ -123,6 +128,7 @@
             this.profile_btn.TabIndex = 9;
             this.profile_btn.Text = "profile";
             this.profile_btn.UseVisualStyleBackColor = true;
+            this.profile_btn.Click += new System.EventHandler(this.profile_btn_Click_1);
             // 
             // admins_btn
             // 
