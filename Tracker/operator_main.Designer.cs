@@ -45,6 +45,7 @@
             this.notes_btn.TabIndex = 17;
             this.notes_btn.Text = "notes";
             this.notes_btn.UseVisualStyleBackColor = true;
+            this.notes_btn.Click += new System.EventHandler(this.notes_btn_Click);
             // 
             // stop_btn
             // 
@@ -54,6 +55,7 @@
             this.stop_btn.TabIndex = 16;
             this.stop_btn.Text = "stop & go cards";
             this.stop_btn.UseVisualStyleBackColor = true;
+            this.stop_btn.Click += new System.EventHandler(this.stop_btn_Click);
             // 
             // proplems_btn
             // 
@@ -63,6 +65,7 @@
             this.proplems_btn.TabIndex = 15;
             this.proplems_btn.Text = "documented proplems";
             this.proplems_btn.UseVisualStyleBackColor = true;
+            this.proplems_btn.Click += new System.EventHandler(this.proplems_btn_Click);
             // 
             // safety_gauges_btn
             // 
@@ -72,6 +75,7 @@
             this.safety_gauges_btn.TabIndex = 13;
             this.safety_gauges_btn.Text = "safety gauges";
             this.safety_gauges_btn.UseVisualStyleBackColor = true;
+            this.safety_gauges_btn.Click += new System.EventHandler(this.safety_gauges_btn_Click);
             // 
             // machines_btn
             // 
@@ -81,6 +85,7 @@
             this.machines_btn.TabIndex = 12;
             this.machines_btn.Text = "machines";
             this.machines_btn.UseVisualStyleBackColor = true;
+            this.machines_btn.Click += new System.EventHandler(this.machines_btn_Click);
             // 
             // final_tracker_btn
             // 
@@ -90,6 +95,7 @@
             this.final_tracker_btn.TabIndex = 10;
             this.final_tracker_btn.Text = "final tracker";
             this.final_tracker_btn.UseVisualStyleBackColor = true;
+            this.final_tracker_btn.Click += new System.EventHandler(this.final_tracker_btn_Click);
             // 
             // profile_btn
             // 
@@ -99,6 +105,7 @@
             this.profile_btn.TabIndex = 9;
             this.profile_btn.Text = "profile";
             this.profile_btn.UseVisualStyleBackColor = true;
+            this.profile_btn.Click += new System.EventHandler(this.profile_btn_Click);
             // 
             // operator_main
             // 
