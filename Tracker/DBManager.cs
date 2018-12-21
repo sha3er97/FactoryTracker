@@ -11,7 +11,7 @@ namespace Tracker
     public class DBManager
     {
 
-        static string DB_Connection_String = @"Data Source=AMR-LAPTOP\SQLEXPRESS;Initial Catalog=PROJECT11;Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=DESKTOP-74T3DFN\SQLEXPRESS;Initial Catalog=PROJECT11;Integrated Security=True";
 
         SqlConnection myConnection;
 
@@ -25,7 +25,7 @@ namespace Tracker
                 // just for illustration when the database is opened, 
                 // this should NOT be shown in GUI to the user in the final application
                 // but we show it here only to make sure that the database is working
-                MessageBox.Show("Successfully connected to the database!");
+                //MessageBox.Show("Successfully connected to the database!");
             }
             catch (Exception e)
             {
