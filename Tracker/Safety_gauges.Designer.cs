@@ -77,6 +77,7 @@
             this.addGauge_btn.TabIndex = 23;
             this.addGauge_btn.Text = "add new gauge";
             this.addGauge_btn.UseVisualStyleBackColor = true;
+            this.addGauge_btn.Click += new System.EventHandler(this.addGauge_btn_Click);
             // 
             // type_cmbBox
             // 
@@ -124,6 +125,7 @@
             this.update_btn.TabIndex = 28;
             this.update_btn.Text = "update gauge";
             this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
             // Safety_gauges
             // 

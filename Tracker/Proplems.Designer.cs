@@ -113,6 +113,7 @@
             this.addProplem_btn.TabIndex = 13;
             this.addProplem_btn.Text = "add new proplem";
             this.addProplem_btn.UseVisualStyleBackColor = true;
+            this.addProplem_btn.Click += new System.EventHandler(this.addProplem_btn_Click);
             // 
             // search_btn
             // 

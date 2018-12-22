@@ -58,5 +58,17 @@ namespace Tracker
         {
 
         }
+
+        private void addGauge_btn_Click(object sender, EventArgs e)
+        {
+            AddNewGauge f = new AddNewGauge();
+            f.Show();
+        }
+
+        private void update_btn_Click(object sender, EventArgs e)
+        {
+            UpdateGaugeReading f = new UpdateGaugeReading(_privilege, _ID);
+            f.Show();
+        }
     }
 }

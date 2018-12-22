@@ -30,6 +30,13 @@ namespace Tracker
                 departement_cmbBox.Enabled = false;
                 TO_cmbBox.Enabled = false;
             }
+            else
+            {
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                departement_cmbBox.Enabled = true;
+                TO_cmbBox.Enabled = true;
+            }
         }
     }
 }

@@ -21,6 +21,11 @@ namespace Tracker
             controllerObj = new Controller();
             _privilege = privilege;
             _ID = ID;
+            compose_btn.Enabled = false;
+            if (_privilege == Privileges.Operators)
+            {
+                compose_btn.Enabled = true;
+            }
             //Stop has category 0     Go 1
         }
         
@@ -38,6 +43,12 @@ namespace Tracker
                 dataGridView1.DataSource = controllerObj.GetCardsReceived(_ID, 0);
             else if (radioButton2.Checked)
                 dataGridView1.DataSource = controllerObj.GetCardsReceived(_ID, 1);
+        }
+
+        private void compose_btn_Click(object sender, EventArgs e)
+        {
+            AddNewStop_Go f = new AddNewStop_Go();
+            f.Show();
         }
     }
 }

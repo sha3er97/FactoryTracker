@@ -42,5 +42,10 @@ namespace Tracker
 
         }
 
+        private void addProplem_btn_Click(object sender, EventArgs e)
+        {
+            AddNewProplem f = new AddNewProplem();
+            f.Show();
+        }
     }
 }

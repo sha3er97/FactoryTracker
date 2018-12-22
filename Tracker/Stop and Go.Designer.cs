@@ -43,8 +43,9 @@
             this.compose_btn.Name = "compose_btn";
             this.compose_btn.Size = new System.Drawing.Size(260, 23);
             this.compose_btn.TabIndex = 9;
-            this.compose_btn.Text = "compose new message";
+            this.compose_btn.Text = "compose new card";
             this.compose_btn.UseVisualStyleBackColor = true;
+            this.compose_btn.Click += new System.EventHandler(this.compose_btn_Click);
             // 
             // dataGridView1
             // 
