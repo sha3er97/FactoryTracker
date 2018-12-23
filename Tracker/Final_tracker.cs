@@ -13,17 +13,23 @@ namespace Tracker
     public partial class Final_tracker : Form
     {
         private Privileges _privilege;
+        private int _ID;
+        private Controller controllerObj;
         public Final_tracker(Privileges privilege, int ID)
         {
             InitializeComponent();
+            controllerObj = new Controller();
             _privilege = privilege;
+            _ID = ID;
             feedbackBox.Enabled = false;
             numericUpDown1.Enabled = false;
             if (privilege == Privileges.Manager)
             {
                 feedbackBox.Enabled = true;
             }
-            if (privilege == Privileges.Operators /*&& chief of production*/)
+            if (privilege == Privileges.Operators 
+                && controllerObj.getIS_Chief(_ID) == 1 
+                &&  controllerObj.getDepOperatorByID(_ID)=="production")
             {
                 numericUpDown1.Enabled = true;
             }

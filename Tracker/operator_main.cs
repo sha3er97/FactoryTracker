@@ -14,14 +14,16 @@ namespace Tracker
     {
         private Privileges _privilege;
         private int _ID;
+        private Controller controllerObj;
         public operator_main(Privileges privilege, int ID)
         {
             InitializeComponent();
+            controllerObj = new Controller();
             _privilege = privilege;
             _ID = ID;
             safety_gauges_btn.Enabled = false;
             final_tracker_btn.Enabled = false;
-            if (true /*chief operator*/)
+            if (controllerObj.getIS_Chief(_ID) == 1)
             {
                 safety_gauges_btn.Enabled = true;
                 final_tracker_btn.Enabled = true;

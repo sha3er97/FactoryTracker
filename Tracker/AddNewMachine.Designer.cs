@@ -43,6 +43,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.save_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.monthsCounter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,11 +208,23 @@
             this.label7.TabIndex = 41;
             this.label7.Text = "Company assigned :";
             // 
+            // save_btn
+            // 
+            this.save_btn.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.save_btn.Location = new System.Drawing.Point(138, 303);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Size = new System.Drawing.Size(94, 27);
+            this.save_btn.TabIndex = 43;
+            this.save_btn.Text = "Save";
+            this.save_btn.UseVisualStyleBackColor = true;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
+            // 
             // AddNewMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(396, 337);
+            this.Controls.Add(this.save_btn);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.radioButton2);
@@ -253,5 +266,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button save_btn;
     }
 }

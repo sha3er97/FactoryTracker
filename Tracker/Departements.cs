@@ -17,6 +17,17 @@ namespace Tracker
         {
             InitializeComponent();
             controllerObj = new Controller();
+      
+        }
+
+        private void addDept_btn_Click(object sender, EventArgs e)
+        {
+            AddNewDepartement f = new AddNewDepartement();
+            f.Show();
+        }
+
+        private void Departements_Load(object sender, EventArgs e)
+        {
             DataTable dt = controllerObj.GetDeparments();
             departement_cmbBox.DataSource = dt;
             departement_cmbBox.DisplayMember = "name";
@@ -24,12 +35,6 @@ namespace Tracker
             DataTable dt1 = controllerObj.getdepdetails((int)departement_cmbBox.SelectedValue);
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
-        }
-
-        private void addDept_btn_Click(object sender, EventArgs e)
-        {
-            AddNewDepartement f = new AddNewDepartement();
-            f.Show();
         }
     }
 }

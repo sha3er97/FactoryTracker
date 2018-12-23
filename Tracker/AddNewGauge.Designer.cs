@@ -118,6 +118,7 @@
             this.save_btn.TabIndex = 28;
             this.save_btn.Text = "Save";
             this.save_btn.UseVisualStyleBackColor = true;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click_1);
             // 
             // AddNewGauge
             // 

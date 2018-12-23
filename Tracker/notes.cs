@@ -29,12 +29,10 @@ namespace Tracker
                 dataGridView1.DataSource = controllerObj.GetNotesSentOperaor(_ID);
             else
                 dataGridView1.DataSource = controllerObj.GetNotesSentAdmin(_ID);
-            dataGridView1.Columns.Add("Is_Received", "Is_Received");
             dataGridView1.Columns.Add("From", "From");
 
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {
-                r.Cells["Is_Received"].Value = controllerObj.getisreceived(Convert.ToInt32(r.Cells["id"].Value));
                 r.Cells["From"].Value = controllerObj.getFrom(Convert.ToInt32(r.Cells["id"]));
             }
 

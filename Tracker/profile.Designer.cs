@@ -167,6 +167,7 @@
             this.Controls.Add(this.label1);
             this.Name = "profile";
             this.Text = "profile";
+            this.Load += new System.EventHandler(this.profile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

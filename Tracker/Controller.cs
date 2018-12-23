@@ -33,14 +33,14 @@ namespace Tracker
         }
         public int getIDOperator(string user, string pass)
         {
-            string query = "select id from Operator where username=' " + user + " ' and password=' " + pass + " ';";
+            string query = "select id from Operator where username='" + user + "' and password=' " + pass + " ';";
             object p = dbMan.ExecuteScalar(query);
             if (p != null) return (int)p;
             else return -1;
         }
         public int getIDAdminstrator(string user, string pass)
         {
-            string query = "select id from Administrator where username=' " + user + " ' and password=' " + pass + " ';";
+            string query = "select id from Administrator where username='" + user + "' and password=' " + pass + " ';";
             object p = dbMan.ExecuteScalar(query);
             if (p != null) return (int)p;
             else return -1;
@@ -86,7 +86,7 @@ namespace Tracker
 
         public int getCategory(int id)
         {
-            string query = "SELECT category from Sub_Department where id = " + id;
+            string query = "SELECT category from Sub_Department where id=" + id;
             object p = dbMan.ExecuteScalar(query);
             if (p != null)
                 return (int)p;
@@ -120,7 +120,7 @@ namespace Tracker
 
         public DataTable getdepdetails(int id)
         {
-            String Query = "Select * from Sub_Department where id=" + id + ";";
+            String Query = "Select id,name,category,building_no,partition_no from Sub_Department where id=" + id + ";";
             return dbMan.ExecuteReader(Query);
         }
 
@@ -143,14 +143,14 @@ namespace Tracker
 
         public DataTable SelectUtilitiesMachinesInDepartment(int id)
         {
-            string query = "select name from Utilities_Machines where included_in = " + id;
+            string query = "select name,id from Utilities_Machines where included_in = " + id;
             return dbMan.ExecuteReader(query);
 
         }
 
         public DataTable SelectProductionMachinesInDepartment(int id)
         {
-            string query = "select name from Production_Machines where included_in = " + id;
+            string query = "select name,id from Production_Machines where included_in = " + id;
             return dbMan.ExecuteReader(query);
 
         }
@@ -186,34 +186,34 @@ namespace Tracker
         }
         public string getDepAdminByID(int id)
         {
-            string query = "select name from Administrator,Sub_Department where manager_id=id and id=" + id;
+            string query = "select s.name from Administrator a ,Sub_Department s where a.manager_id=s.id and a.id=" + id;
             object p = dbMan.ExecuteScalar(query);
             if (p != null) return (string)p;
             else return null;
         }
         public string getDepOperatorByID(int id)
         {
-            string query = "select name from Operator o,Sub_Department s where o.works_in=s.id and o.id=" + id;
+            string query = "select s.name from Operator o ,Sub_Department s where o.works_in=s.id and o.id=" + id;
             object p = dbMan.ExecuteScalar(query);
             if (p != null) return (string)p;
             else return null;
         }
         public int UpdateProfileOperator(string user, string pass, string email, int id)
         {
-            string query = "update Operator set username= " + user + " where id=" + id;
+            string query = "update Operator set username= '" + user + "' where id=" + id;
             dbMan.ExecuteNonQuery(query);
-            query = "update Operator set password= " + pass + " where id=" + id;
+            query = "update Operator set password= '" + pass + "' where id=" + id;
             dbMan.ExecuteNonQuery(query);
-            query = "update Operator set e_mail= " + email + " where id=" + id;
+            query = "update Operator set e_mail= '" + email + "' where id=" + id;
             return dbMan.ExecuteNonQuery(query);
         }
         public int UpdateProfileAdmin(string user, string pass, string email, int id)
         {
-            string query = "update Administrator set username= " + user + " where id=" + id;
+            string query = "update Administrator set username= '" + user + "' where id=" + id;
             dbMan.ExecuteNonQuery(query);
-            query = "update Administrator set password= " + pass + " where id=" + id;
+            query = "update Administrator set password= '" + pass + "' where id=" + id;
             dbMan.ExecuteNonQuery(query);
-            query = "update Administrator set e_mail= " + email + " where id=" + id;
+            query = "update Administrator set e_mail= '" + email + "' where id=" + id;
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -292,6 +292,55 @@ namespace Tracker
             string query = "DELETE FROM Maintainance_Companies WHERE id=" + id;
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public string getUserNameAdminByID(int id)
+        {
+            string query = "select username from Administrator where id=" + id;
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (string)p;
+            else return null;
+        }
+        public string getuserNameOperatorByID(int id)
+        {
+            string query = "select username from Operator where id=" + id;
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (string)p;
+            else return null;
+        }
+        public string getpasswordAdminByID(int id)
+        {
+            string query = "select password from Administrator where id=" + id;
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (string)p;
+            else return null;
+        }
+        public string getpasswordOperatorByID(int id)
+        {
+            string query = "select password from Operator where id=" + id;
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (string)p;
+            else return null;
+        }
+        public string getemailAdminByID(int id)
+        {
+            string query = "select e_mail from Administrator where id=" + id;
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (string)p;
+            else return null;
+        }
+        public string getemailOperatorByID(int id)
+        {
+            string query = "select e_mail from Operator where id=" + id;
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (string)p;
+            else return null;
+        }
+        /////////////////////////////////////////// moh abdallah
+        public DataTable GetNotesReceivedAdmin(int id)
+        {
+            string query = "select id,[content],from Notes_FYAs n,Notes_To_Employee t where t.id=n.id and t.administrator_id=" + id;
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable GetCardsSent(int id, int type)
         {
             string query = "select * from Stop_Go_Cards where reported_by=" + id + "and type=" + type;
@@ -302,7 +351,6 @@ namespace Tracker
             string query = "select id,observation,comment,date from Stop_Go_Cards,Cards_To_Admin where id=card_id and admin_id=" + id + "and type=" + type;
             return dbMan.ExecuteReader(query);
         }
-
         public DataTable GetNamesOfOperators(int dep)
         {
             String Query = "select name,id from Operator where works_in=" + dep;
@@ -310,7 +358,7 @@ namespace Tracker
         }
         public DataTable getDetailsOperatorByID(int id)
         {
-            string query = "select * from Operator where id=" + id;
+            string query = "select id,name,e_mail from Operator where id=" + id;
             return dbMan.ExecuteReader(query);
         }
         public int DeleteOperator(int id)
@@ -365,12 +413,70 @@ namespace Tracker
             }
             else return " ";
         }
-        public DataTable GetNotesReceivedAdmin(int id)
+        public int getIS_Chief(int id)
         {
-            string query = "select id,[content],from Notes_FYAs n,Notes_To_Employee t where t.id=n.id and t.administrator_id=" + id;
+            string query = "select is_chief from Operator where id=" + id;
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (int)p;
+            else return -1;
+        }
+        ////////////////////// hamdy
+        public int InsertNewGauge(int dep, int no, int normal, String type)
+        //no from query get  max of no in it +1
+        {
+            String Query = "insert into Stop_Go_Cards (department_id,no,normal,type) values(" + dep + " ," + no + " , " + normal + " , '" + type + "' ;";
+            return dbMan.ExecuteNonQuery(Query);
+        }
+        public int Getmaxnofromsafetygauges(int id)
+        //id of departement
+        {
+
+            //Notes->ViewSent
+            String Query = "select MAX(no) from Safety_Gauges where department_id=" + id + ";";
+            return (int)dbMan.ExecuteScalar(Query);
+        }
+        public DataTable GetALLCompaniesNames()
+        {
+            string query = "select name from Maintainance_Companies ;";
             return dbMan.ExecuteReader(query);
         }
 
+        //Add New Machine
+        public int InsertNewProductionMachine(int dep, String name, int per, int company, string catalog, string func)
+        {
+            String Query = "insert into Production_Machines (name,functionality,periodic_maintenance,catalog_link,included_in,maintenance_company) values('" + name + "' ,'" + func + "' , '" + per + "' , '" + catalog + "' , " + dep + " , " + company + "; ";
+            return dbMan.ExecuteNonQuery(Query);
+        }
+
+        public int InsertNewUtilityMachine(int dep, String name, int per, int company, string catalog, string func)
+        {
+            String Query = "insert into Utilities_Machines (name,functionality,periodic_maintenance,catalog_link,included_in,maintenance_company) values('" + name + "' ,'" + func + "' , '" + per + "' , '" + catalog + "' , " + dep + " , " + company + "; ";
+            return dbMan.ExecuteNonQuery(Query);
+        }
+        public DataTable SelectUtilitiesMachinesDetails(int id)
+        {
+            string query = "select * from Utilities_Machines where included_in = " + id;
+            return dbMan.ExecuteReader(query);
+
+        }
+        public int DeleteUtilitiesMachinesDetails(int id)
+        {
+            string query = "delete from Utilities_Machines where included_in= " + id;
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int DeleteProductionMachinesDetails(int id)
+        {
+            string query = "delete from Production_Machines where included_in= " + id;
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable SelectProductionMachinesDetails(int id)
+        {
+            string query = "select * from Production_Machines where included_in = " + id;
+            return dbMan.ExecuteReader(query);
+
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();

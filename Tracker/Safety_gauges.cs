@@ -35,11 +35,13 @@ namespace Tracker
                 departement_cmbBox.Enabled = true;
 
             }
-            if (privilege == Privileges.Operators /* && is chief*/)
+            if (privilege == Privileges.Operators)
             {
                 update_btn.Enabled = true;
             }
-            type_cmbBox.DataSource = new string[] { "Fumes,CO2,Fire Alert" };
+            type_cmbBox.Items.Add("Co2");
+            type_cmbBox.Items.Add("Fumes ");
+            type_cmbBox.Items.Add("Fire Alert");
         }
         private void search_btn_Click(object sender, EventArgs e)
         {

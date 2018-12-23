@@ -89,6 +89,7 @@
             this.departement_cmbBox.Name = "departement_cmbBox";
             this.departement_cmbBox.Size = new System.Drawing.Size(203, 21);
             this.departement_cmbBox.TabIndex = 39;
+            this.departement_cmbBox.SelectedIndexChanged += new System.EventHandler(this.departement_cmbBox_SelectedIndexChanged_1);
             // 
             // label1
             // 

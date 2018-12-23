@@ -34,11 +34,16 @@ namespace Tracker
         }
         private void Proplems_Load(object sender, EventArgs e)
         {
-            
-            //Show Departments
-            category_cmbBox.DataSource = "Electric,Mechanical,Maintenance";
+
+            departement_cmbBox.DataSource = controllerObj.GetDeparments();
+            departement_cmbBox.DisplayMember = "name";
+            departement_cmbBox.ValueMember = "id";
+
+            category_cmbBox.Items.Add("Electric");
+            category_cmbBox.Items.Add("Mechanical");
+            category_cmbBox.Items.Add("Maintenance");
             int category = controllerObj.getCategory(Convert.ToInt32(departement_cmbBox.SelectedValue));
-            //show machines based on department//show machines based on department
+            //show machines based on department
 
         }
 
@@ -46,6 +51,23 @@ namespace Tracker
         {
             AddNewProplem f = new AddNewProplem();
             f.Show();
+        }
+
+        private void departement_cmbBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (controllerObj.getCategory(Convert.ToInt32(departement_cmbBox.SelectedValue)) == 0)
+            {
+                machine_cmbBox.DataSource = controllerObj.SelectUtilitiesMachinesInDepartment(Convert.ToInt32(departement_cmbBox.SelectedValue));
+                machine_cmbBox.DisplayMember = "name";
+                machine_cmbBox.ValueMember = "id";
+            }
+            else if (controllerObj.getCategory(Convert.ToInt32(departement_cmbBox.SelectedValue)) == 1)
+            {
+                machine_cmbBox.DataSource = controllerObj.SelectProductionMachinesInDepartment(Convert.ToInt32(departement_cmbBox.SelectedValue));
+                machine_cmbBox.DisplayMember = "name";
+                machine_cmbBox.ValueMember = "id";
+            }
+
         }
     }
 }

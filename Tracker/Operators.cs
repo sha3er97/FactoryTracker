@@ -33,12 +33,6 @@ namespace Tracker
             departement_cmbBox.ValueMember = "id";
 
         }
-        private void departement_cmbBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            comboBox1.DataSource = controllerObj.GetNamesOfOperators(Convert.ToInt32(departement_cmbBox.SelectedValue));
-            comboBox1.DisplayMember = "name";
-            comboBox1.ValueMember = "id";
-        }
 
         private void search_btn_Click(object sender, EventArgs e)
         {
@@ -59,6 +53,13 @@ namespace Tracker
         {
             AddNewOperator f = new AddNewOperator();
             f.Show();
+        }
+
+        private void departement_cmbBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            comboBox1.DataSource = controllerObj.GetNamesOfOperators(Convert.ToInt32(departement_cmbBox.SelectedValue));
+            comboBox1.DisplayMember = "name";
+            comboBox1.ValueMember = "id";
         }
     }
     }
