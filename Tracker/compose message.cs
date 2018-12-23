@@ -12,13 +12,16 @@ namespace Tracker
 {
     public partial class compose_message : Form
     {
+        int to;
         private Privileges _privilege;
+        Controller ControllerObj;
         private int _ID;
         public compose_message(Privileges privilege, int ID)
         {
             InitializeComponent();
             _privilege = privilege;
             _ID = ID;
+            to = 0;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -36,7 +39,32 @@ namespace Tracker
                 radioButton2.Enabled = true;
                 departement_cmbBox.Enabled = true;
                 TO_cmbBox.Enabled = true;
+                departement_cmbBox.DataSource = ControllerObj.GetDeparments();
+                departement_cmbBox.DisplayMember = "name";
+                departement_cmbBox.ValueMember = "id";
+
             }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                TO_cmbBox.DataSource = ControllerObj.getnamesoperators(Convert.ToInt32(departement_cmbBox.SelectedValue));
+                TO_cmbBox.DisplayMember = "name";
+                TO_cmbBox.ValueMember = "id";
+            }
+            else if (radioButton2.Checked)
+            {
+                TO_cmbBox.Text = ControllerObj.getnameAdminOfDep(Convert.ToInt32(departement_cmbBox.SelectedValue));
+                to = ControllerObj.getIDAdminBydep(Convert.ToInt32(departement_cmbBox.SelectedValue));
+
+            }
+        }
+
+        private void send_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

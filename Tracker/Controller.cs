@@ -502,6 +502,31 @@ namespace Tracker
             if (p != null) return (string)p;
             else return " ";
         }
+        public string getnameAdminOfDep(int ID)
+        {
+            int res = -1;
+            string query = "select manager_id from Sub_Department where id=" + ID;
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null)
+            {
+                res = (int)p;
+                return getNameAdminByID(res);
+            }
+            else
+                return " ";
+        }
+        public int getIDAdminBydep(int id)
+        {
+            string query = "select manager_id from Sub_Department where id=" + id;
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (int)p;
+            else return -1;
+        }
+        public DataTable getnamesoperators(int id)
+        {
+            string query = "select name,id from Operator where works_in=" + id;
+            return dbMan.ExecuteReader(query);
+        }
         /// <summary>
         /// ////////// hamdy
         /// </summary>
