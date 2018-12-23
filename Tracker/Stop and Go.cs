@@ -47,7 +47,7 @@ namespace Tracker
 
         private void compose_btn_Click(object sender, EventArgs e)
         {
-            AddNewStop_Go f = new AddNewStop_Go();
+            AddNewStop_Go f = new AddNewStop_Go(_privilege, _ID);
             f.Show();
         }
     }

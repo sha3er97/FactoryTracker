@@ -39,11 +39,12 @@
             this.profile_btn = new System.Windows.Forms.Button();
             this.admins_btn = new System.Windows.Forms.Button();
             this.operators_btn = new System.Windows.Forms.Button();
+            this.statistics_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // notes_btn
             // 
-            this.notes_btn.Location = new System.Drawing.Point(12, 361);
+            this.notes_btn.Location = new System.Drawing.Point(12, 325);
             this.notes_btn.Name = "notes_btn";
             this.notes_btn.Size = new System.Drawing.Size(260, 23);
             this.notes_btn.TabIndex = 17;
@@ -53,7 +54,7 @@
             // 
             // stop_btn
             // 
-            this.stop_btn.Location = new System.Drawing.Point(12, 326);
+            this.stop_btn.Location = new System.Drawing.Point(12, 294);
             this.stop_btn.Name = "stop_btn";
             this.stop_btn.Size = new System.Drawing.Size(260, 23);
             this.stop_btn.TabIndex = 16;
@@ -63,7 +64,7 @@
             // 
             // proplems_btn
             // 
-            this.proplems_btn.Location = new System.Drawing.Point(12, 288);
+            this.proplems_btn.Location = new System.Drawing.Point(12, 263);
             this.proplems_btn.Name = "proplems_btn";
             this.proplems_btn.Size = new System.Drawing.Size(260, 23);
             this.proplems_btn.TabIndex = 15;
@@ -73,7 +74,7 @@
             // 
             // companies_btn
             // 
-            this.companies_btn.Location = new System.Drawing.Point(12, 249);
+            this.companies_btn.Location = new System.Drawing.Point(12, 231);
             this.companies_btn.Name = "companies_btn";
             this.companies_btn.Size = new System.Drawing.Size(260, 23);
             this.companies_btn.TabIndex = 14;
@@ -83,7 +84,7 @@
             // 
             // safety_gauges_btn
             // 
-            this.safety_gauges_btn.Location = new System.Drawing.Point(12, 214);
+            this.safety_gauges_btn.Location = new System.Drawing.Point(12, 200);
             this.safety_gauges_btn.Name = "safety_gauges_btn";
             this.safety_gauges_btn.Size = new System.Drawing.Size(260, 23);
             this.safety_gauges_btn.TabIndex = 13;
@@ -93,7 +94,7 @@
             // 
             // machines_btn
             // 
-            this.machines_btn.Location = new System.Drawing.Point(12, 179);
+            this.machines_btn.Location = new System.Drawing.Point(12, 168);
             this.machines_btn.Name = "machines_btn";
             this.machines_btn.Size = new System.Drawing.Size(260, 23);
             this.machines_btn.TabIndex = 12;
@@ -103,7 +104,7 @@
             // 
             // departements_btn
             // 
-            this.departements_btn.Location = new System.Drawing.Point(12, 80);
+            this.departements_btn.Location = new System.Drawing.Point(12, 72);
             this.departements_btn.Name = "departements_btn";
             this.departements_btn.Size = new System.Drawing.Size(260, 23);
             this.departements_btn.TabIndex = 11;
@@ -113,7 +114,7 @@
             // 
             // final_tracker_btn
             // 
-            this.final_tracker_btn.Location = new System.Drawing.Point(12, 47);
+            this.final_tracker_btn.Location = new System.Drawing.Point(12, 39);
             this.final_tracker_btn.Name = "final_tracker_btn";
             this.final_tracker_btn.Size = new System.Drawing.Size(260, 23);
             this.final_tracker_btn.TabIndex = 10;
@@ -133,7 +134,7 @@
             // 
             // admins_btn
             // 
-            this.admins_btn.Location = new System.Drawing.Point(12, 113);
+            this.admins_btn.Location = new System.Drawing.Point(12, 105);
             this.admins_btn.Name = "admins_btn";
             this.admins_btn.Size = new System.Drawing.Size(260, 23);
             this.admins_btn.TabIndex = 18;
@@ -143,7 +144,7 @@
             // 
             // operators_btn
             // 
-            this.operators_btn.Location = new System.Drawing.Point(12, 145);
+            this.operators_btn.Location = new System.Drawing.Point(12, 137);
             this.operators_btn.Name = "operators_btn";
             this.operators_btn.Size = new System.Drawing.Size(260, 23);
             this.operators_btn.TabIndex = 19;
@@ -151,11 +152,22 @@
             this.operators_btn.UseVisualStyleBackColor = true;
             this.operators_btn.Click += new System.EventHandler(this.operators_btn_Click_1);
             // 
+            // statistics_btn
+            // 
+            this.statistics_btn.Location = new System.Drawing.Point(12, 356);
+            this.statistics_btn.Name = "statistics_btn";
+            this.statistics_btn.Size = new System.Drawing.Size(260, 23);
+            this.statistics_btn.TabIndex = 20;
+            this.statistics_btn.Text = "view statistics";
+            this.statistics_btn.UseVisualStyleBackColor = true;
+            this.statistics_btn.Click += new System.EventHandler(this.statistics_btn_Click);
+            // 
             // manager_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 392);
+            this.Controls.Add(this.statistics_btn);
             this.Controls.Add(this.operators_btn);
             this.Controls.Add(this.admins_btn);
             this.Controls.Add(this.notes_btn);
@@ -186,5 +198,6 @@
         private System.Windows.Forms.Button profile_btn;
         private System.Windows.Forms.Button admins_btn;
         private System.Windows.Forms.Button operators_btn;
+        private System.Windows.Forms.Button statistics_btn;
     }
 }

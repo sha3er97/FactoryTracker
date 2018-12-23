@@ -36,10 +36,14 @@ namespace Tracker
 
 
         }
-
+        private void save_btn_Click(object sender, EventArgs e)
+        {
+            controllerObj.Updatetracker(Convert.ToInt32(numericUpDown1.Value), feedbackBox.Text, dateTimePicker1.Value);
+        }
         private void Final_tracker_Load(object sender, EventArgs e)
         {
-
+            numericUpDown1.Value = controllerObj.getQTY(dateTimePicker1.Value);
+            feedbackBox.Text = controllerObj.getfeed(dateTimePicker1.Value);
         }
     }
 }

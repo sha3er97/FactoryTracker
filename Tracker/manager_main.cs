@@ -87,5 +87,11 @@ namespace Tracker
             notes f = new notes(_privilege, _ID);
             f.Show();
         }
+
+        private void statistics_btn_Click(object sender, EventArgs e)
+        {
+            statistics f = new statistics();
+            f.Show();
+        }
     }
 }

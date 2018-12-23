@@ -477,6 +477,81 @@ namespace Tracker
             return dbMan.ExecuteReader(query);
 
         }
+        /// <summary>
+        /// ///////////// final tracker moh abdallah
+        /// </summary>
+        public int Updatetracker(int c, string f, DateTime d)
+        {
+            string query = "update Final_Products set product_QTY =" + c + " where date='" + d + "';";
+            dbMan.ExecuteNonQuery(query);
+            query = "update Final_Products set feedback =" + f + " where date='" + d + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int getQTY(DateTime d)
+        {
+            string query = "select product_QTY from Final_Products where date='" + d + "';";
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (int)p;
+            else return -1;
+
+        }
+        public string getfeed(DateTime d)
+        {
+            string query = "select feedback from Final_Products where date='" + d + "';";
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (string)p;
+            else return " ";
+        }
+        /// <summary>
+        /// ////////// hamdy
+        /// </summary>
+        public int InsertNewUtilityProblem(int umi, String c, String d, String o, String s, int sup)
+        {
+            String Query = "insert into Documented_Problems (utility_machine_id,category,description,cause,solution,supervised_by) values(" + umi + " ,'" + c + "' , '" + d + "' , '" + o + "' , '" + s + "' , '" + sup + "' ;";
+            return dbMan.ExecuteNonQuery(Query);
+        }
+        //*************************************************************************
+        public int InsertNewProductionProblem(int pri, String c, String d, String o, String s, int sup)
+        {
+            String Query = "insert into Documented_Problems (production_machine_id,category,description,cause,solution,supervised_by) values(" + pri + " ,'" + c + "' , '" + d + "' , '" + o + "' , '" + s + "' , '" + sup + "' ;";
+            return dbMan.ExecuteNonQuery(Query);
+        }
+
+        public DataTable GetUtilitiesMachines()
+        {
+            string query = "select id,name from Utilities_Machines ;";
+            return dbMan.ExecuteReader(query);
+        }
+
+
+        public DataTable GetProductionMachines()
+        {
+            string query = "select id,name from Production_Machines ;";
+            return dbMan.ExecuteReader(query);
+        }
+        public int InsertNewstopandgo(int type, String obs, String comment, int ID)
+        {
+            String Query = "insert into Stop_Go_Cards (type,observation,comment,reported_by) values(" + type + " ,'" + obs + "' , '" + comment + "' , " + ID + ";";
+            return dbMan.ExecuteNonQuery(Query);
+        }
+        /// <summary>
+        /// /////statistics functions
+        /// </summary>
+        public int numberofAdministrators()
+        {
+            string query = "select count(*) from Administrator ;";
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (int)p;
+            else return 0;
+        }
+
+        public int numberofoperators()
+        {
+            string query = "select count(*) from Operator ;";
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (int)p;
+            else return 0;
+        }
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
