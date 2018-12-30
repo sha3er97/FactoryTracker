@@ -47,7 +47,14 @@ namespace Tracker
             f.Show();
         }
 
-        private void search_btn_Click(object sender, EventArgs e)
+
+        
+        private void Machines_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void search_btn_Click_1(object sender, EventArgs e)
         {
             DataTable dt;
             if (type_cmbBox.Text == "Utility")
@@ -62,7 +69,7 @@ namespace Tracker
             dataGridView1.Refresh();
         }
 
-        private void delete_btn_Click(object sender, EventArgs e)
+        private void delete_btn_Click_1(object sender, EventArgs e)
         {
             int s;
             if (type_cmbBox.Text == "Utility")
@@ -81,11 +88,6 @@ namespace Tracker
             {
                 MessageBox.Show("fail to delete");
             }
-        }
-
-        private void Machines_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

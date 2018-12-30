@@ -28,23 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.adminsNO = new System.Windows.Forms.Label();
             this.OpsNo = new System.Windows.Forms.Label();
-            this.productionAVG = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label1.Location = new System.Drawing.Point(37, 251);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "production average";
             // 
             // label2
             // 
@@ -60,7 +54,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label3.Location = new System.Drawing.Point(37, 102);
+            this.label3.Location = new System.Drawing.Point(23, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 17);
             this.label3.TabIndex = 3;
@@ -70,7 +64,7 @@
             // 
             this.adminsNO.AutoSize = true;
             this.adminsNO.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.adminsNO.Location = new System.Drawing.Point(238, 40);
+            this.adminsNO.Location = new System.Drawing.Point(259, 40);
             this.adminsNO.Name = "adminsNO";
             this.adminsNO.Size = new System.Drawing.Size(16, 17);
             this.adminsNO.TabIndex = 4;
@@ -80,46 +74,105 @@
             // 
             this.OpsNo.AutoSize = true;
             this.OpsNo.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.OpsNo.Location = new System.Drawing.Point(238, 102);
+            this.OpsNo.Location = new System.Drawing.Point(259, 102);
             this.OpsNo.Name = "OpsNo";
             this.OpsNo.Size = new System.Drawing.Size(16, 17);
             this.OpsNo.TabIndex = 5;
             this.OpsNo.Text = "0";
             // 
-            // productionAVG
+            // label1
             // 
-            this.productionAVG.AutoSize = true;
-            this.productionAVG.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.productionAVG.Location = new System.Drawing.Point(238, 251);
-            this.productionAVG.Name = "productionAVG";
-            this.productionAVG.Size = new System.Drawing.Size(16, 17);
-            this.productionAVG.TabIndex = 6;
-            this.productionAVG.Text = "0";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label1.Location = new System.Drawing.Point(259, 160);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label4.Location = new System.Drawing.Point(23, 160);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(160, 17);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "total no of departements";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label5.Location = new System.Drawing.Point(23, 211);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(208, 17);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "total no of production machines:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label6.Location = new System.Drawing.Point(259, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(16, 17);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label7.Location = new System.Drawing.Point(259, 248);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(16, 17);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label8.Location = new System.Drawing.Point(23, 248);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(173, 17);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "total no of utility machines:";
             // 
             // statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(277, 333);
-            this.Controls.Add(this.productionAVG);
+            this.ClientSize = new System.Drawing.Size(307, 288);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.OpsNo);
             this.Controls.Add(this.adminsNO);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "statistics";
             this.Text = "statistics";
+            this.Load += new System.EventHandler(this.statistics_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label adminsNO;
         private System.Windows.Forms.Label OpsNo;
-        private System.Windows.Forms.Label productionAVG;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

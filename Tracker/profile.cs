@@ -25,10 +25,13 @@ namespace Tracker
 
         private void save_btn_Click(object sender, EventArgs e)
         {
+            int r = 0;
             if (_privilege == Privileges.Operators)
-                controllerObj.UpdateProfileOperator(textBox1.Text, textBox2.Text, textBox3.Text, _ID);
+                r=controllerObj.UpdateProfileOperator(textBox1.Text, textBox2.Text, textBox3.Text, _ID);
             else
-                controllerObj.UpdateProfileAdmin(textBox1.Text, textBox2.Text, textBox3.Text, _ID);
+                r=controllerObj.UpdateProfileAdmin(textBox1.Text, textBox2.Text, textBox3.Text, _ID);
+            if (r > 0) MessageBox.Show("Succefully added");
+            else MessageBox.Show("Failed");
 
         }
 

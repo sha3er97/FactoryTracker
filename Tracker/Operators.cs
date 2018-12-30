@@ -36,7 +36,7 @@ namespace Tracker
 
         private void search_btn_Click(object sender, EventArgs e)
         {
-            controllerObj.getDetailsOperatorByID(Convert.ToInt32(comboBox1.SelectedValue));
+           dataGridView1.DataSource= controllerObj.getDetailsOperatorByID(Convert.ToInt32(comboBox1.SelectedValue));
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
@@ -61,5 +61,16 @@ namespace Tracker
             comboBox1.DisplayMember = "name";
             comboBox1.ValueMember = "id";
         }
+
+        private void Operators_Load(object sender, EventArgs e)
+        {
+            if (departement_cmbBox.Enabled == false)
+
+            comboBox1.DataSource = controllerObj.GetNamesOfOperators(Convert.ToInt32(controllerObj.getDepByAdminID(_ID)));
+            comboBox1.DisplayMember = "name";
+            comboBox1.ValueMember = "id";
+
+        }
+        }
     }
-    }
+    

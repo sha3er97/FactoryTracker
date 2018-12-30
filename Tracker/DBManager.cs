@@ -11,7 +11,7 @@ namespace Tracker
     public class DBManager
     {
 
-        static string DB_Connection_String = @"Data Source=DESKTOP-74T3DFN\SQLEXPRESS;Initial Catalog=PROJECT11;Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=DESKTOP-74T3DFN\SQLEXPRESS;Initial Catalog=PROJECTFinal;Integrated Security=True";
 
         SqlConnection myConnection;
 

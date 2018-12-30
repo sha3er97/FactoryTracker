@@ -48,6 +48,7 @@
             this.radioButton2.TabIndex = 13;
             this.radioButton2.Text = "Go";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -109,6 +110,7 @@
             this.send_btn.TabIndex = 23;
             this.send_btn.Text = "Send";
             this.send_btn.UseVisualStyleBackColor = true;
+            this.send_btn.Click += new System.EventHandler(this.send_btn_Click_1);
             // 
             // toAdmin_cmbBox
             // 
@@ -144,6 +146,7 @@
             this.Controls.Add(this.radioButton1);
             this.Name = "AddNewStop_Go";
             this.Text = "AddNewStop_Go";
+            this.Load += new System.EventHandler(this.AddNewStop_Go_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

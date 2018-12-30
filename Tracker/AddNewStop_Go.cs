@@ -27,17 +27,23 @@ namespace Tracker
             toAdmin_cmbBox.ValueMember = "id";
         }
 
-        private void send_btn_Click(object sender, EventArgs e)
+
+        private void AddNewStop_Go_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void send_btn_Click_1(object sender, EventArgs e)
         {
             int x = 1;
             if (radioButton1.Checked)
             {
                 x = 0;
             }
-            int s = controlobj.InsertNewstopandgo(x, causeBox.Text, solutionBox.Text, _ID);
+            int s = controlobj.InsertNewstopandgo(x, causeBox.Text, solutionBox.Text, _ID,Convert.ToInt32(toAdmin_cmbBox.SelectedValue));
             if (s > 0)
             {
-                MessageBox.Show("suucessfully inserted");
+                MessageBox.Show("sucessfully inserted");
             }
             else
             {
@@ -45,7 +51,12 @@ namespace Tracker
             }
         }
 
-        private void AddNewStop_Go_Load(object sender, EventArgs e)
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddNewStop_Go_Load_1(object sender, EventArgs e)
         {
 
         }

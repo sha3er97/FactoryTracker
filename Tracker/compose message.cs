@@ -65,6 +65,26 @@ namespace Tracker
         private void send_btn_Click(object sender, EventArgs e)
         {
 
+            if (radioButton2.Checked)
+            {
+                if (_privilege == Privileges.Operators)
+                    ControllerObj.InsertNotefromOperatorToOperator(messageBox.Text, _ID, Convert.ToInt32(TO_cmbBox.SelectedValue));
+                else
+                    ControllerObj.InsertNotefromAdminToOperator(messageBox.Text, _ID, Convert.ToInt32(TO_cmbBox.SelectedValue));
+
+            }
+            else if (radioButton1.Checked)
+                if (_privilege == Privileges.Operators)
+                    ControllerObj.InsertNotefromOperatorToAdmin(messageBox.Text, _ID, to);
+                 else 
+                    ControllerObj.InsertNotefromAdminToAdmin(messageBox.Text, _ID, to);
+
+
+        }
+
+        private void compose_message_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

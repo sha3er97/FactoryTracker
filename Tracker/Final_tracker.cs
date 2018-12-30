@@ -42,8 +42,10 @@ namespace Tracker
         }
         private void Final_tracker_Load(object sender, EventArgs e)
         {
-            numericUpDown1.Value = controllerObj.getQTY(dateTimePicker1.Value);
-            feedbackBox.Text = controllerObj.getfeed(dateTimePicker1.Value);
+            //numericUpDown1.Enabled = false;
+            //feedbackBox.Enabled = false;
+            //numericUpDown1.Value=Convert.ToDecimal(controllerObj.getQTY(dateTimePicker1.Value));
+            //feedbackBox.Text = controllerObj.getfeed(dateTimePicker1.Value);
         }
     }
 }

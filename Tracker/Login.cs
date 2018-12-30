@@ -63,7 +63,11 @@ namespace Tracker
                 // Don't close it because it's the startup form and the application will exit
                 this.Hide();
             }
-            
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
+    }
     }
 

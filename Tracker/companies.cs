@@ -66,17 +66,35 @@ namespace Tracker
 
         private void search_btn_Click(object sender, EventArgs e)
         {
-            DataTable dt;
-            if (u == 1)
+            if (departement_cmbBox.Enabled == false)
             {
-                dt = controllerObj.SelectUtilitiesMachinescompanies((int)machine_cmbBox.SelectedValue);
+
+                DataTable dt;
+                if (u == 1)
+                {
+                    dt = controllerObj.SelectUtilitiesMachinescompanies(controllerObj.getDepByAdminID(_ID));
+                }
+                else
+                {
+                    dt = controllerObj.SelectProductionMachinesIcompanies(controllerObj.getDepByAdminID(_ID));
+                }
+                dataGridView1.DataSource = dt;
+                dataGridView1.Refresh();
             }
             else
             {
-                dt = controllerObj.SelectProductionMachinesIcompanies((int)machine_cmbBox.SelectedValue);
+                DataTable dt;
+                if (u == 1)
+                {
+                    dt = controllerObj.SelectUtilitiesMachinescompanies((int)machine_cmbBox.SelectedValue);
+                }
+                else
+                {
+                    dt = controllerObj.SelectProductionMachinesIcompanies((int)machine_cmbBox.SelectedValue);
+                }
+                dataGridView1.DataSource = dt;
+                dataGridView1.Refresh();
             }
-            dataGridView1.DataSource = dt;
-            dataGridView1.Refresh();
         }
 
         private void delete_btn_Click(object sender, EventArgs e)

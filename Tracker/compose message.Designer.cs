@@ -144,6 +144,7 @@
             this.Controls.Add(this.checkBox1);
             this.Name = "compose_message";
             this.Text = "compose_message";
+            this.Load += new System.EventHandler(this.compose_message_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

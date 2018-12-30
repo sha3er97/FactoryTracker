@@ -19,6 +19,14 @@ namespace Tracker
             controllerObj = new Controller();
             adminsNO.Text=(controllerObj.numberofAdministrators()-1).ToString();
             OpsNo.Text = controllerObj.numberofoperators().ToString();
+            label1.Text = controllerObj.numberofdeoartments().ToString();
+            label6.Text = controllerObj.SelectUtilitiesMachines().ToString();
+            label7.Text = controllerObj.SelectProductionMachines().ToString();
+        }
+
+        private void statistics_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

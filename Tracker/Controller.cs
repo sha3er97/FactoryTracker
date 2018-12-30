@@ -33,14 +33,14 @@ namespace Tracker
         }
         public int getIDOperator(string user, string pass)
         {
-            string query = "select id from Operator where username='" + user + "' and password=' " + pass + " ';";
+            string query = "select id from Operator where username='" + user + "' and password='" + pass + "';";
             object p = dbMan.ExecuteScalar(query);
             if (p != null) return (int)p;
             else return -1;
         }
         public int getIDAdminstrator(string user, string pass)
         {
-            string query = "select id from Administrator where username='" + user + "' and password=' " + pass + " ';";
+            string query = "select id from Administrator where username='" + user + "' and password='" + pass + "';";
             object p = dbMan.ExecuteScalar(query);
             if (p != null) return (int)p;
             else return -1;
@@ -54,6 +54,16 @@ namespace Tracker
             else return -1;
 
         }
+        public int getDepByAdminID(int id)
+        {
+            string query = "SELECT id from Sub_Department where manager_id = " + id;
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null)
+                return (int)p;
+            else return -1;
+
+        }
+
         public DataTable GetGaugesByID(int id)
         {
             int dep = getDepByID(id);
@@ -169,7 +179,20 @@ namespace Tracker
 
         }
 
-
+        public int SelectProductionMachines()
+        {
+            string query = "select count(*) from Production_Machines ;";
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (int)p;
+            else return 0;
+        }
+        public int SelectUtilitiesMachines()
+        {
+            string query = "select count(*) from Utilities_Machines ;";
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (int)p;
+            else return 0;
+        }
         public string getNameOperatorByID(int id)
         {
             string query = "select name from Operator where id=" + id;
@@ -186,7 +209,7 @@ namespace Tracker
         }
         public string getDepAdminByID(int id)
         {
-            string query = "select s.name from Administrator a ,Sub_Department s where a.manager_id=s.id and a.id=" + id;
+            string query = "select s.name from Administrator a ,Sub_Department s where s.manager_id=s.id and a.id=" + id;
             object p = dbMan.ExecuteScalar(query);
             if (p != null) return (string)p;
             else return null;
@@ -276,6 +299,8 @@ namespace Tracker
             else return -1;
 
         }
+
+
 
         public int getidofproductionmachinecom(int id)
         {
@@ -554,9 +579,9 @@ namespace Tracker
             string query = "select id,name from Production_Machines ;";
             return dbMan.ExecuteReader(query);
         }
-        public int InsertNewstopandgo(int type, String obs, String comment, int ID)
+        public int InsertNewstopandgo(int type, String obs, String comment, int ID,int to)
         {
-            String Query = "insert into Stop_Go_Cards (type,observation,comment,reported_by) values(" + type + " ,'" + obs + "' , '" + comment + "' , " + ID + ";";
+            String Query = "insert into Stop_Go_Cards (type,observation,comment,reported_by,TOO_administrator) values(" + type + " ,'" + obs + "' , '" + comment + "' , " + ID +","+to+ ";";
             return dbMan.ExecuteNonQuery(Query);
         }
         /// <summary>
@@ -570,12 +595,40 @@ namespace Tracker
             else return 0;
         }
 
+        public int numberofdeoartments()
+        {
+            string query = "select count(*) from Sub_Department ;";
+            object p = dbMan.ExecuteScalar(query);
+            if (p != null) return (int)p;
+            else return 0;
+        }
+
         public int numberofoperators()
         {
             string query = "select count(*) from Operator ;";
             object p = dbMan.ExecuteScalar(query);
             if (p != null) return (int)p;
             else return 0;
+        }
+        public int InsertNotefromOperatorToAdmin(String content, int from, int to)
+        {
+            String Query = "insert into Notes_FYAs (content,from_operator,TOO_administrator) values ('" + content + "'," + from + "," + to + ");";
+            return dbMan.ExecuteNonQuery(Query);
+        }
+        public int InsertNotefromAdminToAdmin(String content, int from, int to)
+        {
+            String Query = "insert into Notes_FYAs (content,from_administrator,TOO_administrator) values ('" + content + "'," + from + "," + to + ");";
+            return dbMan.ExecuteNonQuery(Query);
+        }
+        public int InsertNotefromOperatorToOperator(String content, int from, int to)
+        {
+            String Query = "insert into Notes_FYAs (content,from_operator,TOO_operator) values ('" + content + "'," + from + "," + to + ");";
+            return dbMan.ExecuteNonQuery(Query);
+        }
+        public int InsertNotefromAdminToOperator(String content, int from, int to)
+        {
+            String Query = "insert into Notes_FYAs (content,from_administrator,TOO_operator) values ('" + content + "'," + from + "," + to + ");";
+            return dbMan.ExecuteNonQuery(Query);
         }
         public void TerminateConnection()
         {

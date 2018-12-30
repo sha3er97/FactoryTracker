@@ -37,23 +37,7 @@ namespace Tracker
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            int s;
-            if (type_cmbBox.Text == "Utility"/*checkbox1.checked*/)
-            {
-                s = controllerObj.InsertNewUtilityProblem((int)machine_cmbBox.SelectedValue, category_cmbBox.Text, descriptionBox.Text, causeBox.Text, solutionBox.Text, _ID);
-            }
-            else
-            {
-                s = controllerObj.InsertNewProductionProblem((int)machine_cmbBox.SelectedValue, category_cmbBox.Text, descriptionBox.Text, causeBox.Text, solutionBox.Text, _ID);
-            }
-            if (s > 0)
-            {
-                MessageBox.Show("successfully inserted");
-            }
-            else
-            {
-                MessageBox.Show("failed to insert");
-            }
+           
         }
         
         private void AddNewProplem_Load(object sender, EventArgs e)
@@ -76,6 +60,27 @@ namespace Tracker
             machine_cmbBox.DataSource = dt;
             machine_cmbBox.DisplayMember = "name";
             machine_cmbBox.ValueMember = "id";
+        }
+
+        private void save_btn_Click_1(object sender, EventArgs e)
+        {
+            int s;
+            if (type_cmbBox.Text == "Utility"/*checkbox1.checked*/)
+            {
+                s = controllerObj.InsertNewUtilityProblem((int)machine_cmbBox.SelectedValue, category_cmbBox.Text, descriptionBox.Text, causeBox.Text, solutionBox.Text, _ID);
+            }
+            else
+            {
+                s = controllerObj.InsertNewProductionProblem((int)machine_cmbBox.SelectedValue, category_cmbBox.Text, descriptionBox.Text, causeBox.Text, solutionBox.Text, _ID);
+            }
+            if (s > 0)
+            {
+                MessageBox.Show("successfully inserted");
+            }
+            else
+            {
+                MessageBox.Show("failed to insert");
+            }
         }
     }
 }

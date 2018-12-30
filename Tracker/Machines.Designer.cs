@@ -48,6 +48,7 @@
             this.delete_btn.TabIndex = 35;
             this.delete_btn.Text = "delete";
             this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click_1);
             // 
             // search_btn
             // 
@@ -58,6 +59,7 @@
             this.search_btn.TabIndex = 34;
             this.search_btn.Text = "Search";
             this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click_1);
             // 
             // type_cmbBox
             // 

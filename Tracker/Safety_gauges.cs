@@ -43,18 +43,9 @@ namespace Tracker
             type_cmbBox.Items.Add("Fumes ");
             type_cmbBox.Items.Add("Fire Alert");
         }
-        private void search_btn_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = controllerObj.GetGauges(Convert.ToInt32(departement_cmbBox.SelectedValue), type_cmbBox.SelectedValue.ToString());
-        }
-        private void delete_btn_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow R in dataGridView1.Rows)
-            {
-                if (R.Selected)
-                    controllerObj.DeleteGauge(Convert.ToInt32(departement_cmbBox.SelectedValue), Convert.ToInt32(R.Cells[1].Value));
-            }
-        }
+        
+        
+        
         
         private void Safety_gauges_Load(object sender, EventArgs e)
         {
@@ -63,7 +54,7 @@ namespace Tracker
 
         private void addGauge_btn_Click(object sender, EventArgs e)
         {
-            AddNewGauge f = new AddNewGauge();
+            AddNewGauge f = new AddNewGauge(_privilege,_ID);
             f.Show();
         }
 
@@ -71,6 +62,43 @@ namespace Tracker
         {
             UpdateGaugeReading f = new UpdateGaugeReading(_privilege, _ID);
             f.Show();
+        }
+
+        private void search_btn_Click_1(object sender, EventArgs e)
+        {
+            int ind=1;
+            if(departement_cmbBox.Enabled==false)
+            {
+                try
+                {
+                    dataGridView1.DataSource = controllerObj.GetGauges(controllerObj.getDepByAdminID(_ID), type_cmbBox.SelectedValue.ToString());
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("no thing found at this part in database");
+                    ind = 0;
+                }
+            }
+            else
+            {
+                dataGridView1.DataSource = controllerObj.GetGauges(Convert.ToInt32(departement_cmbBox.SelectedValue), type_cmbBox.SelectedValue.ToString());
+            }
+        }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (DataGridViewRow R in dataGridView1.Rows)
+                {
+                    if (R.Selected)
+                        controllerObj.DeleteGauge(Convert.ToInt32(departement_cmbBox.SelectedValue), Convert.ToInt32(R.Cells[1].Value));
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("nothing in database to be deleted");
+            }
         }
     }
 }

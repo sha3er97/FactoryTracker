@@ -26,7 +26,9 @@ namespace Tracker
 
         }
 
-        private void save_btn_Click(object sender, EventArgs e)
+        
+
+        private void save_btn_Click_1(object sender, EventArgs e)
         {
             int y;
             if (category_cmbBox.Text == "utility")
