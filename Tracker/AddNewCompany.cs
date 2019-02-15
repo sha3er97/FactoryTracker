@@ -23,7 +23,7 @@ namespace Tracker
 
 
 
-        
+
 
         private void save_btn_Click_1(object sender, EventArgs e)
         {
@@ -32,7 +32,6 @@ namespace Tracker
                 MessageBox.Show("inserting finished");
             else
                 MessageBox.Show("inserting error");
-        
-    }
+        }
     }
 }
